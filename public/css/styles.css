@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css?family=Poiret+One");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css");
+
+body {
+  color: #222;
+  font-family: "Poiret One", Arial, sans-serif;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #FF6F61, #D4A5A5); /* Light coral gradient */
+  align-items: center;
+  justify-content: center;
+}
+
+.main-content {
+  flex-grow: 1;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-size: 48px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.widget {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.2); /* Translucent background */
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  background: #ffffff; /* Solid white widget background */
+}
+
+.weatherLocation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 1rem;
+}
+
+.weatherLocation input {
+  width: 60%;
+  border-radius: 50px;
+  border: none;
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  padding: 0 15px;
+  background: rgba(255, 255, 255, 0.5);
+  color: #333;
+}
+
+.weatherLocation input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.weatherLocation button {
+  width: 80px;
+  height: 40px;
+  border-radius: 50px;
+  border: none;
+  background: #222;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.weatherLocation button:hover {
+  background: #444;
+}
+
+.widget .weatherIcon {
+  font-size: 100px;
+  color: #FF6F61; /* Matching color for icon */
+  margin-top: 20px;
+}
+
+.temperature {
+  font-size: 55px;
+  color: #FF6F61; /* Matching color for temperature */
+  margin-top: 10px;
+}
+
+.place {
+  font-size: 35px;
+  color: #333;
+  margin-top: 20px;
+}
+
+.weatherCondition {
+  font-size: 20px;
+  color: #333;
+  margin-top: 10px;
+}
+
+.date {
+  font-size: 18px;
+  color: #333;
+  margin-top: 10px;
+}
+
+/* New Styles for Search History Section */
+
+#historyList {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 30px;
+  width: 100%;
+  max-width: 500px;
+}
+
+#historyList li {
+  font-family: "Poiret One", Arial, sans-serif;
+  font-size: 18px;
+  color: #333;
+  background: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+  gap:8px;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+}
+
+#historyList li:hover {
+  background: rgba(255, 255, 255, 1); /* Full opacity on hover */
+}
+
+#historyList li span {
+  flex-grow: 1;
+  color: #FF6F61; /* Highlight the city name in matching color */
+}
+
+/* Style for the buttons */
+#historyList button {
+  background: #FF6F61; /* Matching color for delete button */
+  color: white;
+  border: none;
+  border-radius: 50px;
+  min-width: 70px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-left: 10px; /* Space between buttons */
+}
+
+#historyList button:hover {
+  background: #D4A5A5; /* Lighter shade of the theme color for hover effect */
+}
+
+#historyList button:focus {
+  outline: none;
+}
+
+#historyList button.edit {
+  background: #4CAF50; /* Green color for edit button */
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-left: 10px; /* Space between buttons */
+}
+
+#historyList button.edit:hover {
+  background: #66BB6A; /* Lighter shade of green for hover effect */
+}
+
+#historyList button.edit:focus {
+  outline: none;
+}
+
+/* Style for the show button */
+#historyList button.show {
+  background: #FFD700; /* Yellow color for show button */
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-left: 10px; /* Space between buttons */
+}
+
+#historyList button.show:hover {
+  background: #FFEB3B; /* Lighter yellow for hover effect */
+}
+
+#historyList button.show:focus {
+  outline: none;
+}
+
+/* Dropdown-style for weather details */
+.weather-details {
+  display: none; /* Hidden by default */
+  margin-top: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.weather-details p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.weather-details .temperature {
+  font-size: 24px;
+  color: #FF6F61; /* Temperature color */
+}
+
+.weather-details .weatherCondition {
+  font-size: 18px;
+  color: #555;
+}
+
+.weather-details .date {
+  font-size: 14px;
+  color: #777;
+}

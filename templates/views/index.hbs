@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+    <div class="main-content">
+        <h1><center>{{title}}</center></h1>
+        <br> <br>
+        
+        <article class="widget">
+            <form class="weatherLocation">
+                <input class="input-field" placeholder="Enter city name" type="text"/>
+                <button class="search-button">Search</button>
+            </form>
+            <div class="icon-and-weatherInfo">
+                <div class="weatherIcon"><i></i></div>
+                <div class="weatherInfo">
+                    <div class="temperature"><span></span></div>
+                    <div class="weatherCondition"></div>
+                </div>
+            </div>
+            <div class="place"></div>
+            <div class="date"></div>
+        </article>
+
+        <!-- In your search history section -->
+<div class="history">
+    <h2>Search History</h2>
+    <ul id="historyList">
+        {{#each history}}
+            <li>
+                <span>{{this.city}}</span>
+                <button class="edit-button" data-id="{{this._id}}">Edit</button>
+                <button class="show-button" data-id="{{this._id}}">Show</button>
+                <button class="delete-button" data-id="{{this._id}}">Delete</button>
+                <div class="weather-details" id="weather-details-{{this._id}}">
+                    <p class="temperature"></p>
+                    <p class="weatherCondition"></p>
+                    <p class="date"></p>
+                </div>
+            </li>
+        {{/each}}
+    </ul>
+</div>
+
+
+    <script src="js/app.js"></script>//fetch data from API ,upadate,save
+</body>
+</html>
